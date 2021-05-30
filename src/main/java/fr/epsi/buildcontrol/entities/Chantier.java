@@ -23,6 +23,8 @@ public class Chantier {
     @Column(name = "date_fin")
     private LocalDate dateFin;
 
+    private String lieu;
+
     @ManyToMany
     @JoinTable(name="cibler",
             joinColumns = {@JoinColumn(name = "id_corps_metier")},
@@ -63,6 +65,14 @@ public class Chantier {
         this.dateFin = dateFin;
     }
 
+    public String getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
+    }
+
     public List<SousTraitant> getLesCorpsMetiers() {
         return lesCorpsMetiers;
     }
@@ -78,6 +88,7 @@ public class Chantier {
                 ", " + nom +
                 " du dateDebut " + dateDebut +
                 " au dateFin " + dateFin +
+                " à " + lieu +
                 '}';
     }
 
