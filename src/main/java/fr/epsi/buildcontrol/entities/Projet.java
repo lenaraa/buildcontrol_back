@@ -21,6 +21,8 @@ public class Projet {
     @Column(name = "date_fin")
     private LocalDate dateFin;
 
+    private String lieu;
+
     @OneToMany
     private List<Capture> lesCaptures;
 
@@ -55,6 +57,22 @@ public class Projet {
 
     public void setDateFin(LocalDate dateFin) {
         this.dateFin = dateFin;
+    }
+
+    public String getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
+    }
+
+    public List<Capture> getLesCaptures() {
+        return lesCaptures;
+    }
+
+    public void setLesCaptures(List<Capture> lesCaptures) {
+        this.lesCaptures = lesCaptures;
     }
 
 
